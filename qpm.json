@@ -1,0 +1,84 @@
+{
+  "version": "0.1.0",
+  "sharedDir": "shared",
+  "dependenciesDir": "extern",
+  "info": {
+    "name": "FOV Mod",
+    "id": "fov-mod",
+    "version": "0.1.0",
+    "url": null,
+    "additionalData": {
+      "overrideSoName": "libfov-mod.so",
+      "cmake": true
+    }
+  },
+  "workspace": {
+    "scripts": {
+      "build": [
+        "powershell ./scripts/build.ps1"
+      ],
+      "clean": [
+        "powershell ./scripts/build.ps1 -clean"
+      ],
+      "copy": [
+        "powershell ./scripts/copy.ps1 $0:?"
+      ],
+      "logcat": [
+        "powershell ./scripts/start-logging.ps1"
+      ],
+      "qmod": [
+        "powershell ./scripts/build.ps1",
+        "powershell ./scripts/createqmod.ps1"
+      ],
+      "restart": [
+        "powershell ./scripts/restart-game.ps1"
+      ],
+      "stack": [
+        "powershell ./scripts/ndk-stack.ps1"
+      ],
+      "tomb": [
+        "powershell ./scripts/pull-tombstone.ps1"
+      ]
+    },
+    "qmodIncludeDirs": [
+      "./build",
+      "./extern/libs"
+    ],
+    "qmodIncludeFiles": [],
+    "qmodOutput": "./FOV Mod.qmod"
+  },
+  "dependencies": [
+    {
+      "id": "beatsaber-hook",
+      "versionRange": "^5.0.0",
+      "additionalData": {}
+    },
+    {
+      "id": "scotland2",
+      "versionRange": "^0.1.4",
+      "additionalData": {
+        "includeQmod": false
+      }
+    },
+    {
+      "id": "paper",
+      "versionRange": "^3.0.0",
+      "additionalData": {}
+    },
+    {
+      "id": "bsml",
+      "versionRange": "^0.4.43",
+      "additionalData": {}
+    },
+    {
+      "id": "bs-cordl",
+      "versionRange": "^3700.0.0",
+      "additionalData": {}
+    },
+    {
+      "id": "custom-types",
+      "versionRange": "^0.17.10",
+      "additionalData": {}
+    }
+  ]
+}
